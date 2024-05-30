@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from . forms import ContactForm
+from . import models
 
 # Create your views here.
 # def add_apps(request):
@@ -8,5 +9,6 @@ from . forms import ContactForm
 
 
 def add_apps(request):
-    form = ContactForm()    
+    form = ContactForm()         
     return render(request, 'firstapp.html', {'form' : form})
+

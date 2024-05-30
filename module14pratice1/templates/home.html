@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+
+{% block content %}
+<h1>This is home page.</h1>
+
+{% if data %}
+
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Name</th>
+        <th scope="col">Bio</th>        
+      </tr>
+    </thead>
+    <tbody>
+        {% for apps in data %}
+        <tr>        
+            <td>{{apps.auto_field}}</td>
+            <td>{{apps.name}}</td>
+            <td>{{apps.bio}}</td>
+                   
+          </tr> 
+        
+        {% endfor %}
+           
+    </tbody>
+  </table>
+
+
+
+{% else %}
+<h3>No data available show</h3>
+{% endif %}
+
+
+{% endblock %}
