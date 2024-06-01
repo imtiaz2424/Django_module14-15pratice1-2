@@ -7,9 +7,11 @@ def add_album(request):
         album_form = forms.AlbumForm(request.POST)
         if album_form.is_valid():
             album_form.save()
-            return redirect('add_album')
+            return redirect('homepage')
     
     else:
-        album_form = forms.AlbumForm()
+        album_form = forms.AlbumForm(request.POST)
     
     return render(request, 'add_album.html', {'form' : album_form})
+
+
